@@ -1,0 +1,3 @@
+﻿curl--location--request GET 'http://localhost:40000/api/gateway/Product/findall'
+curl --location --request GET 'http://localhost:40000/api/gateway/Category/findall'
+header 'Content-Type: application/json'

@@ -1,0 +1,33 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Category/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 40001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Gateway/Category/{everything}",
+      "UpstreamHttpMethod": [ "Get" ] //,
+      //"SwaggerKey": "contacts"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 40002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Gateway/Product/{everything}",
+      "UpstreamHttpMethod": [ "Get" ] //,
+      //"SwaggerKey": "contacts"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:40000"
+  }
+}
