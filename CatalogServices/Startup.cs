@@ -18,6 +18,7 @@ namespace CatalogServices
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddScoped<Icategory,RepoCategory>();
         }
 
@@ -28,7 +29,15 @@ namespace CatalogServices
             {
                 app.UseDeveloperExceptionPage();
             }
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
 
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Category API V1");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
