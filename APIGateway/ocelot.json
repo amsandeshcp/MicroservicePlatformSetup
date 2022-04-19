@@ -1,4 +1,7 @@
 ﻿{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:40000"
+  },
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/Category/{everything}",
@@ -10,8 +13,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Gateway/Category/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post" ] //,
-      //"SwaggerKey": "contacts"
+      "UpstreamHttpMethod": [ "Get", "Post" ], //,
+      "SwaggerKey": "category"
     },
     {
       "DownstreamPathTemplate": "/api/Product/{everything}",
@@ -23,11 +26,30 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Gateway/Product/{everything}",
-      "UpstreamHttpMethod": [ "Get" ] //,
-      //"SwaggerKey": "contacts"
+      "UpstreamHttpMethod": [ "Get" ], //,
+      "SwaggerKey": "Product"
     }
   ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:40000"
-  }
+  "SwaggerEndPoints": [
+    {
+      "Key": "category",
+      "Config": [
+        {
+          "Name": "category API",
+          "Version": "v1",
+          "Url": "http://localhost:40001/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Product",
+      "Config": [
+        {
+          "Name": "Product API",
+          "Version": "v1",
+          "Url": "http://localhost:40002/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
 }

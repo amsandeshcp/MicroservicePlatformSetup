@@ -26,7 +26,7 @@ namespace ProductServices
                 {
                     Version = "v1",
                     Title = "Product API",
-                    Description = "A simple example ASP.NET Core Web API",
+                    Description = "A simple example microservice arch",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
@@ -52,10 +52,11 @@ namespace ProductServices
                 app.UseDeveloperExceptionPage();
             }
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger(c =>
-            {
-                c.SerializeAsV2 = true;
-            });
+            //app.UseSwagger(c =>
+            //{
+            //    c.SerializeAsV2 = true;
+            //});
+            app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.       
