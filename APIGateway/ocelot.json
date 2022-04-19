@@ -10,7 +10,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Gateway/Category/{everything}",
-      "UpstreamHttpMethod": [ "Get" ] //,
+      "UpstreamHttpMethod": [ "Get", "Post" ] //,
       //"SwaggerKey": "contacts"
     },
     {

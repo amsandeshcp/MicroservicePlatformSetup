@@ -1,3 +1,11 @@
 ﻿curl--location--request GET 'http://localhost:40000/api/gateway/Product/findall'
+------------------------------------------------------------------------------------------------------------------
 curl --location --request GET 'http://localhost:40000/api/gateway/Category/findall'
-header 'Content-Type: application/json'
+------------------------------------------------------------------------------------------------------------------
+curl --location --request POST 'http://localhost:40000/api/gateway/Category/create' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 1,
+    "name": "product3"
+}'
+--------------------------------------------------------------------------------------------------------------------
